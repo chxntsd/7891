@@ -1,0 +1,97 @@
+v41:CreateKeybind({
+    Id = "ohio-shake-aura-keybind",
+    Name = "Keybind",
+    Callback = function()
+        v41:Set(not v41:Get())
+    end,
+})
+v41:CreateSlider({
+    Id = "ohio-shake-aura-max-target",
+    Name = "Max Target",
+    Min = 1,
+    Max = 10,
+    Default = n8,
+    Step = 1,
+    Callback = function(arg)
+        n8 = arg
+    end,
+})
+
+tbl31.AutoVestModule = v36:CreateModule({
+    Id = "ohio-auto-vest",
+    Name = "Auto Vest",
+    Callback = function(arg)
+        fn131()
+        if arg then
+            fn93(tbl31.AutoVest.Vest)
+        end
+    end,
+})
+tbl31.AutoVestModule:CreateKeybind({
+    Id = "ohio-auto-vest-keybind",
+    Name = "Keybind",
+    Callback = function()
+        tbl31.AutoVestModule:Set(not tbl31.AutoVestModule:Get())
+    end,
+})
+tbl31.AutoVestModule:CreateSelector({
+    Id = "ohio-auto-vest-vest",
+    Name = "Vest",
+    Options = { { Value = "Light Vest" }, { Value = "Medium Vest" }, { Value = "Heavy Vest" } },
+    Default = tbl31.AutoVest.Vest,
+    Callback = function(vest)
+        tbl31.AutoVest.Vest = vest
+    end,
+})
+
+tbl31.AutoHealModule = v36:CreateModule({
+    Id = "ohio-auto-heal",
+    Name = "Auto Heal",
+    Callback = function(arg)
+        fn131()
+        if arg then
+            fn93("Bandage")
+            fn93("Beans")
+        end
+    end,
+})
+tbl31.AutoHealModule:CreateKeybind({
+    Id = "ohio-auto-heal-keybind",
+    Name = "Keybind",
+    Callback = function()
+        tbl31.AutoHealModule:Set(not tbl31.AutoHealModule:Get())
+    end,
+})
+
+tbl31.RagebotModule = v36:CreateModule({
+    Id = "ohio-ragebot",
+    Name = "Ragebot",
+    Callback = function(arg)
+        fn130()
+    end,
+})
+tbl31.RagebotModule:CreateKeybind({
+    Id = "ohio-ragebot-keybind",
+    Name = "Keybind",
+    Callback = function()
+        tbl31.RagebotModule:Set(not tbl31.RagebotModule:Get())
+    end,
+})
+tbl31.RagebotModule:CreateToggle({
+    Id = "ohio-ragebot-nextbot",
+    Name = "Nextbot",
+    Default = tbl31.Ragebot.Nextbot,
+    Callback = function(nextbot)
+        tbl31.Ragebot.Nextbot = nextbot
+        fn130()
+    end,
+})
+
+tbl31.RPG_TridentAll_Module = v36:CreateModule({
+    Id = "ohio-rpg-trident-all",
+    Name = "RPG/Trident All",
+    Callback = function(arg)
+        fn130()
+    end,
+})
+tbl31.RPG_TridentAll_Module:CreateKeybind({
